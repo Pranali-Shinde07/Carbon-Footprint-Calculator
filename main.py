@@ -85,7 +85,7 @@ col1.metric("Weekly CO₂ Emissions", f"{weekly_emission:.2f} kg CO₂e")
 col2.metric("Monthly CO₂ Emissions", f"{monthly_emission:.2f} kg CO₂e")
 col3.metric("Yearly CO₂ Emissions", f"{yearly_emission:.2f} kg CO₂e")
 
-if yearly_emission > 6000:
+if yearly_emission > 5000:
     st.error("🔴 Your carbon footprint is high. Consider making eco-friendly changes.")
 elif yearly_emission > 3000:
     st.warning("🟡 Moderate footprint. There’s room for improvement.")
@@ -105,4 +105,5 @@ fig = px.pie(
     color_discrete_sequence=px.colors.sequential.Tealgrn
 )
 fig.update_traces(textinfo="percent+label")
+
 st.plotly_chart(fig, use_container_width=True)
