@@ -46,7 +46,7 @@ with st.container():
 #2.Electricity
 with st.container():
     st.subheader("Electricity")
-    electricity_kwh = st.number_input("Electricity consumption per month (kWh)?", 0, 2000, 150)
+    electricity_kwh = st.number_input("Electricity consumption per month (kWh)?", 0, 2000, 90)
     electricity_emission = electricity_kwh * 12 * 0.5  # 0.5 kg CO2e per kWh
 
 #3.Diet
@@ -107,3 +107,4 @@ fig = px.pie(
 fig.update_traces(textinfo="percent+label")
 
 st.plotly_chart(fig, use_container_width=True)
+
